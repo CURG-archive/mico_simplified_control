@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find mico_simplified_control)/config/mico_simplified_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/mico_simplified" args="joint_state_controller Shoulder_Joint_position_controller Arm_Joint_position_controller  Forearm_Joint_position_controller Wrist_1_Joint_position_controller Wrist_2_Joint_position_controller Hand_Joint_position_controller Finger_1_Proximal_Joint_position_controller Finger_2_Proximal_Joint_position_controller Finger_1_Distal_Joint_position_controller Finger_2_Distal_Joint_position_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/mico_simplified/joint_states" />
+  </node>
+
+</launch>

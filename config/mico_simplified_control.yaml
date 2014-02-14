@@ -1,0 +1,56 @@
+mico_simplified:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  # Position Controllers ---------------------------------------
+  Shoulder_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Shoulder_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Arm_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Arm_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Forearm_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Forearm_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Wrist_1_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Wrist_1_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Wrist_2_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Wrist_2_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Hand_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Hand_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Finger_1_Proximal_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Finger_1_Proximal_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Finger_2_Proximal_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Finger_2_Proximal_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Finger_1_Distal_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Finger_1_Distal_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  Finger_2_Distal_Joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Finger_2_Distal_Joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
